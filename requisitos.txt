@@ -6,7 +6,7 @@ CriminalRecord
 Criminal
     name: string 
     description: string
-    sex: ENUM #male or female
+    gender: ENUM #GENDER
     common_attack_region: string
 Crime 
     crime_id: string #uuid
