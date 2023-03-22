@@ -28,37 +28,37 @@ class CriminalRecords(abc.ABC):
         self.arrested = arrested
         
         
-        @staticmethod
-        def validate_criminal_records_id(criminal_records_id: str) -> bool:
-            if type(criminal_records_id) is not str:
-                return False
-            if criminal_records_id is None:
-                return False
-            return True
-        
-        @staticmethod
-        def validate_criminal(criminal: Criminal) -> bool:
-            if type(criminal) is not Criminal:
-                return False
-            if criminal is None:
-                return False
-            return True
+    @staticmethod
+    def validate_criminal_records_id(criminal_records_id: str) -> bool:
+        if type(criminal_records_id) is not str:
+            return False
+        if criminal_records_id is None:
+            return False
+        return True
+    
+    @staticmethod
+    def validate_criminal(criminal: Criminal) -> bool:
+        if type(criminal) is not Criminal:
+            return False
+        if criminal is None:
+            return False
+        return True
 
-        @staticmethod
-        def validate_crime_types(crime_type: CRIME_TYPE) -> bool:
-            if type(crime_type) is not CRIME_TYPE:
-                return False
-            if crime_type is None:
-                return False
-            return True
+    @staticmethod
+    def validate_crime_type(crime_type: CRIME_TYPE) -> bool:
+        if type(crime_type) is not CRIME_TYPE:
+            return False
+        if crime_type is None:
+            return False
+        return True
 
-        @staticmethod
-        def validate_arrested(arrested: bool) -> bool:
-            if type(arrested) is not bool:
-                return False
-            if arrested is None:
-                return False
-            return True
+    @staticmethod
+    def validate_arrested(arrested: bool) -> bool:
+        if type(arrested) is not bool:
+            return False
+        if arrested is None:
+            return False
+        return True
 
 
         

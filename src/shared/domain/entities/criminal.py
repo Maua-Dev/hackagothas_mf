@@ -32,6 +32,8 @@ class Criminal(abc.ABC):
             return False
         if name is None:
             return False
+        if len(name) < 3:
+            return False
         return True
         
     @staticmethod
@@ -55,5 +57,7 @@ class Criminal(abc.ABC):
         if type(common_attack_region) is not str:
             return False
         if common_attack_region is None:
+            return False
+        if len(common_attack_region) < 3:
             return False
         return True
