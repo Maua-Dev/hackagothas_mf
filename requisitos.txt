@@ -1,10 +1,15 @@
 CriminalRecord
     criminal_record_id: string #uuid
     criminal: Criminal
-    crime_types: ENUM
+    crime_types: ENUM #CRIMINAL_TYPE
     arrested: bool
 Criminal
     name: string 
     description: string
     sex: ENUM #male or female
     common_attack_region: string
+Crime 
+    crime_id: string #uuid
+    criminal: Criminal
+    crime_types: ENUM #CRIMINAL_TYPE
+
