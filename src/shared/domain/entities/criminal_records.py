@@ -26,8 +26,7 @@ class CriminalRecords(abc.ABC):
         if not self.validate_arrested(arrested):
             raise EntityError("arrested must be a bool")
         self.arrested = arrested
-        
-        
+    
     @staticmethod
     def validate_criminal_records_id(criminal_records_id: str) -> bool:
         if type(criminal_records_id) is not str:
