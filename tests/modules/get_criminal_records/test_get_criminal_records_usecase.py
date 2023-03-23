@@ -34,5 +34,5 @@ class Test_GetCriminalRecordsUseCase:
         usecase = GetCriminalRecordsUseCase(repo)
         
         with pytest.raises(EntityError):
-            criminal_record_response = usecase(1)        
+            criminal_record_response = usecase(1)       
 
