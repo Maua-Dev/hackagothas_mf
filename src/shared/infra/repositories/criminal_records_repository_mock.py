@@ -67,5 +67,11 @@ class CriminalRecordsRepositoryMock(ICriminalRecordsRepository):
             
         ]
     
-    def get_criminal_records(self, criminal_records_id: str) -> list[CriminalRecords]:
-        return [record for record in self.criminal_records if record.criminal_records_id == criminal_records_id]
+    def get_criminal_records(self, criminal_records_id: str) -> CriminalRecords:
+        for records in self.criminal_records:
+            if (records.criminal_records_id == criminal_records_id):
+                return records
+        return None
+        
+    
+    
