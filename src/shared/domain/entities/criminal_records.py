@@ -33,6 +33,8 @@ class CriminalRecords(abc.ABC):
             return False
         if criminal_records_id is None:
             return False
+        if len(criminal_records_id) != 36:
+            return False
         return True
     
     @staticmethod

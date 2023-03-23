@@ -25,7 +25,7 @@ class Test_GetCriminalRecordsUseCase:
         repo = CriminalRecordsRepositoryMock()
         usecase = GetCriminalRecordsUseCase(repo)
         
-        with pytest.raises(NoItemsFound):
+        with pytest.raises(EntityError):
             criminal_record_response = usecase("macaco")
             
         
@@ -34,5 +34,12 @@ class Test_GetCriminalRecordsUseCase:
         usecase = GetCriminalRecordsUseCase(repo)
         
         with pytest.raises(EntityError):
-            criminal_record_response = usecase(1)       
+            criminal_record_response = usecase(1)  
+    
+    def test_get_criminal_records_without_id(self):
+        repo = CriminalRecordsRepositoryMock()
+        usecase = GetCriminalRecordsUseCase(repo)
+        
+        with pytest.raises(EntityError):
+            criminal_record_response = usecase("")
 
