@@ -14,9 +14,9 @@ class Test_CriminalRecordsRepositoryMock():
         
         assert type(repo_response) == CriminalRecords
         assert repo_response.criminal_records_id == "e5a328bb-8522-4530-aa5a-c879a2d87bf3"
-        assert repo_response.criminal.name == "Digão"
-        assert repo_response.criminal.common_attack_region == "Santo André"
-        assert repo_response.criminal.description == "Digão gosta de roubar"
+        assert repo_response.criminal.name == "Digao"
+        assert repo_response.criminal.common_attack_region == "Santo Andre"
+        assert repo_response.criminal.description == "Digao gosta de roubar"
         assert repo_response.criminal.gender == GENDER.MALE
         assert repo_response.arrested == True
         assert repo_response.crime_type == CRIME_TYPE.ROBBERY

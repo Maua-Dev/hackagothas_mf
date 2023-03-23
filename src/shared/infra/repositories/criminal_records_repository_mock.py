@@ -13,9 +13,9 @@ class CriminalRecordsRepositoryMock(ICriminalRecordsRepository):
     def __init__(self):
         self.criminal = [
             Criminal(
-                name="Digão",
-                common_attack_region="Santo André",
-                description="Digão gosta de roubar",
+                name="Digao",
+                common_attack_region="Santo Andre",
+                description="Digao gosta de roubar",
                 gender=GENDER.MALE
             ),
             Criminal(
@@ -26,13 +26,13 @@ class CriminalRecordsRepositoryMock(ICriminalRecordsRepository):
             ),
             Criminal(
                 name="Bia",
-                common_attack_region="São Caetano",
+                common_attack_region="Sao Caetano",
                 description="Bia gosta de traficar",
                 gender=GENDER.FEMALE
             ),
             Criminal(
                 name="Sofia",
-                common_attack_region="São Bernardo",
+                common_attack_region="Sao Bernardo",
                 description="Sofia gosta de matar",
                 gender=GENDER.FEMALE
             ),

@@ -39,9 +39,8 @@ class CriminalRecordsViewmodel:
         return {
             "criminal_records_id": self.criminal_records_id,
             "criminal": self.criminal.to_dict(),
-            "crime_type": self.crime_type,
+            "crime_type": self.crime_type.value,
             "arrested": self.arrested,
-            "message": "CriminalRecord was retrieved"
         }
 
 class GetCriminalRecordsViewmodel:

@@ -14,9 +14,9 @@ class Test_GetCriminalRecordsUseCase:
         criminal_record_response = usecase("e5a328bb-8522-4530-aa5a-c879a2d87bf3")
         
         assert criminal_record_response.criminal_records_id == "e5a328bb-8522-4530-aa5a-c879a2d87bf3"
-        assert criminal_record_response.criminal.name == "Digão"
-        assert criminal_record_response.criminal.common_attack_region == "Santo André"
-        assert criminal_record_response.criminal.description == "Digão gosta de roubar"
+        assert criminal_record_response.criminal.name == "Digao"
+        assert criminal_record_response.criminal.common_attack_region == "Santo Andre"
+        assert criminal_record_response.criminal.description == "Digao gosta de roubar"
         assert criminal_record_response.criminal.gender == GENDER.MALE
         assert criminal_record_response.arrested == True
         assert criminal_record_response.crime_type == CRIME_TYPE.ROBBERY
