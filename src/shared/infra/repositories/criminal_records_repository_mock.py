@@ -70,5 +70,6 @@ class CriminalRecordsRepositoryMock(ICriminalRecordsRepository):
     def get_criminal_records(self, criminal_records_id: str) -> list[CriminalRecords]:
         return [record for record in self.criminal_records if record.criminal_records_id == criminal_records_id]
     
-    def create_criminal_records(self, create_records: CriminalRecords) -> CriminalRecords:
-        return super().create_criminal_records(create_records)
+    def create_criminal_records(self, criminal_record: CriminalRecords) -> CriminalRecords:
+        self.criminal_records.append(criminal_record)
+        return criminal_record
