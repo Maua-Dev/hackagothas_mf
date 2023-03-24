@@ -4,16 +4,16 @@ from src.shared.domain.entities.criminal import Criminal
 from src.shared.domain.enums.criminal_type import CRIME_TYPE
 from src.shared.helpers.errors.domain_errors import EntityError
 
-class CriminalRecords(abc.ABC):
-    criminal_records_id: str #uuid
+class CriminalRecord(abc.ABC):
+    criminal_record_id: str #uuid
     criminal: Criminal
     crime_type: CRIME_TYPE
     arrested: bool
     
-    def __init__(self, criminal_records_id: str, criminal: Criminal, crime_type: CRIME_TYPE, arrested: bool):
-        if not self.validate_criminal_records_id(criminal_records_id):
-            raise EntityError("criminal_records_id")
-        self.criminal_records_id = criminal_records_id  
+    def __init__(self, criminal_record_id: str, criminal: Criminal, crime_type: CRIME_TYPE, arrested: bool):
+        if not self.validate_criminal_record_id(criminal_record_id):
+            raise EntityError("criminal_record_id")
+        self.criminal_record_id = criminal_record_id  
         
         if not self.validate_criminal(criminal):
             raise EntityError("criminal")
@@ -28,12 +28,12 @@ class CriminalRecords(abc.ABC):
         self.arrested = arrested
     
     @staticmethod
-    def validate_criminal_records_id(criminal_records_id: str) -> bool:
-        if type(criminal_records_id) is not str:
+    def validate_criminal_record_id(criminal_record_id: str) -> bool:
+        if type(criminal_record_id) is not str:
             return False
-        if criminal_records_id is None:
+        if criminal_record_id is None:
             return False
-        if len(criminal_records_id) != 36:
+        if len(criminal_record_id) != 36:
             return False
         return True
     

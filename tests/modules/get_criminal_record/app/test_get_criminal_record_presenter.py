@@ -1,20 +1,21 @@
 import json
-from src.modules.get_crimal_records.app.get_criminal_records_presenter import get_criminal_records_presenter
+
+from src.modules.get_crimal_record.app.get_criminal_record_presenter import get_criminal_record_presenter
 
 
-class Test_GetCriminalRecordsPresenter:
-    def test_get_criminal_records_presenter(self):
+class Test_GetCriminalRecordPresenter:
+    def test_get_criminal_record_presenter(self):
         event = {
             "body": {
-                "criminal_records_id": "e5a328bb-8522-4530-aa5a-c879a2d87bf3"
+                "criminal_record_id": "e5a328bb-8522-4530-aa5a-c879a2d87bf3"
             }
         }
         
-        response = get_criminal_records_presenter(event, None)
+        response = get_criminal_record_presenter(event, None)
         
         expects = {
-            'criminal_records':{
-                'criminal_records_id':'e5a328bb-8522-4530-aa5a-c879a2d87bf3',
+            'criminal_record':{
+                'criminal_record_id':'e5a328bb-8522-4530-aa5a-c879a2d87bf3',
                 'criminal':{
                     'name':'Digao',
                     'description':'Digao gosta de roubar',

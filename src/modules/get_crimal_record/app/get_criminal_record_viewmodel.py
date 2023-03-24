@@ -1,5 +1,5 @@
 from src.shared.domain.entities.criminal import Criminal
-from src.shared.domain.entities.criminal_records import CriminalRecords
+from src.shared.domain.entities.criminal_record import CriminalRecord
 from src.shared.domain.enums.criminal_type import CRIME_TYPE
 from src.shared.domain.enums.gender import GENDER
 
@@ -23,34 +23,34 @@ class CriminalViewmodel:
             "common_attack_region": self.common_attack_region,
         }
 
-class CriminalRecordsViewmodel:
-    criminal_records_id: str #uuid
+class CriminalRecordViewmodel:
+    criminal_record_id: str #uuid
     criminal: CriminalViewmodel
     crime_type: CRIME_TYPE
     arrested: bool
     
-    def __init__(self, criminal_records: CriminalRecords):
-        self.criminal_records_id = criminal_records.criminal_records_id
-        self.criminal = CriminalViewmodel(criminal_records.criminal)
-        self.crime_type = criminal_records.crime_type
-        self.arrested = criminal_records.arrested
+    def __init__(self, criminal_record: CriminalRecord):
+        self.criminal_record_id = criminal_record.criminal_record_id
+        self.criminal = CriminalViewmodel(criminal_record.criminal)
+        self.crime_type = criminal_record.crime_type
+        self.arrested = criminal_record.arrested
     
     def to_dict(self):
         return {
-            "criminal_records_id": self.criminal_records_id,
+            "criminal_record_id": self.criminal_record_id,
             "criminal": self.criminal.to_dict(),
             "crime_type": self.crime_type.value,
             "arrested": self.arrested,
         }
 
-class GetCriminalRecordsViewmodel:
-    criminal_records: CriminalRecordsViewmodel
+class GetCriminalRecordViewmodel:
+    criminal_record: CriminalRecordViewmodel
     
-    def __init__(self, criminal_records: CriminalRecords):
-        self.criminal_records = CriminalRecordsViewmodel(criminal_records)
+    def __init__(self, criminal_record: CriminalRecord):
+        self.criminal_record = CriminalRecordViewmodel(criminal_record)
     
     def to_dict(self):
         return {
-            "criminal_records": self.criminal_records.to_dict(),
+            "criminal_record": self.criminal_record.to_dict(),
             "message": "CriminalRecord was retrieved"
         }
