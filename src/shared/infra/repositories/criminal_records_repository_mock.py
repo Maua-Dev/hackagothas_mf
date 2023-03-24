@@ -72,6 +72,30 @@ class CriminalRecordsRepositoryMock(ICriminalRecordsRepository):
             if (records.criminal_records_id == criminal_records_id):
                 return records
         return None
+    
+    def update_criminal_records(self, criminal_records_id: str, new_arrested: bool = None, 
+                                new_crime_type: CRIME_TYPE = None, new_name: str = None, 
+                                new_common_attack_region: str = None, new_description: str = None, 
+                                new_gender: GENDER = None) -> CriminalRecords:
+        for records in self.criminal_records:
+            if records.criminal_records_id == criminal_records_id:
+                if new_crime_type is not None:
+                    records.crime_type = new_crime_type
+                if new_arrested is not None:
+                    records.arrested = new_arrested
+                if new_name is not None:
+                    records.criminal.name = new_name
+                if new_common_attack_region is not None:
+                    records.criminal.common_attack_region = new_common_attack_region
+                if new_description is not None:
+                    records.criminal.description = new_description
+                if new_gender is not None:
+                    records.criminal.gender = new_gender
+                    
+                return records
+        return None
+                
+            
         
     
     
