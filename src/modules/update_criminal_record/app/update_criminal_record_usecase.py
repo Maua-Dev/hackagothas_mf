@@ -11,20 +11,21 @@ class UpdateCriminalRecordUseCase:
     def __init__(self, criminal_record_repository: ICriminalRecordRepository):
         self.repository = criminal_record_repository
 
-    def __call__(self, criminal_record_id: str, new_arrested: bool = None, 
-                                new_crime_type: CRIME_TYPE = None, new_name: str = None, 
+    def __call__(self, criminal_record_id: str, new_name: str, new_arrested: bool = None, 
+                                new_crime_type: CRIME_TYPE = None, 
                                 new_common_attack_region: str = None, new_description: str = None, 
                                 new_gender: GENDER = None) -> CriminalRecord:
         
+        #required parameters
         if type(criminal_record_id) != str or None:
             raise EntityError("criminal_record_id")
-        
+        if type(new_name) != str and new_name or None:
+            raise EntityError("name")
+        #optional parameters
         if type(new_arrested) != bool and new_arrested != None:
             raise EntityError("arrested")
         if type(new_crime_type) != CRIME_TYPE and new_crime_type != None:
             raise EntityError("crime_type")
-        if type(new_name) != str and new_name != None:
-            raise EntityError("name")
         if type(new_common_attack_region) != str and new_common_attack_region != None:
             raise EntityError("common_attack_region")
         if type(new_description) != str and new_description != None:

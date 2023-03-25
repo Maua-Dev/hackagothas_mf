@@ -39,7 +39,8 @@ class Test_UpdateCriminalRecordUsecase:
         
         with pytest.raises(NoItemsFound):
             update_criminal_record = usecase(
-                criminal_record_id="mamaco"
+                criminal_record_id="mamaco",
+                new_name="Rodrigo"
             )
             
     def test_update_criminal_record_usecase_id_not_string(self):
@@ -48,7 +49,8 @@ class Test_UpdateCriminalRecordUsecase:
         
         with pytest.raises(EntityError):
             update_criminal_record = usecase(
-                criminal_record_id=123
+                criminal_record_id=123,
+                new_name="Rodrigo"
             )
             
     def test_update_criminal_record_usecase_arrested_not_bool(self):
@@ -58,6 +60,7 @@ class Test_UpdateCriminalRecordUsecase:
         with pytest.raises(EntityError):
             update_criminal_record = usecase(
                 criminal_record_id="e5a328bb-8522-4530-aa5a-c879a2d87bf3",
+                new_name="Rodrigo",
                 new_arrested=123
             )
     
@@ -68,7 +71,8 @@ class Test_UpdateCriminalRecordUsecase:
         with pytest.raises(EntityError):
             update_criminal_record = usecase(
                 criminal_record_id="e5a328bb-8522-4530-aa5a-c879a2d87bf3",
-                new_crime_type="mamaco"
+                new_crime_type="mamaco",
+                new_name="Rodrigo"
             )
     
     
