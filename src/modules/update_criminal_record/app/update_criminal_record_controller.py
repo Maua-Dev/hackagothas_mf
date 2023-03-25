@@ -24,11 +24,11 @@ class UpdateCriminalRecordController:
             updated_criminal_record = self.usecase(
                 criminal_record_id=request.data.get("criminal_record_id"),
                 new_name=request.data.get("new_name"),
-                new_gender=request.data.get("new_gender"),
+                new_gender=GENDER[request.data.get("new_gender")],
                 new_common_attack_region=request.data.get("new_common_attack_region"),
                 new_description=request.data.get("new_description"),
                 new_arrested=request.data.get("new_arrested"),
-                new_crime_type=request.data.get("new_crime_type")
+                new_crime_type=CRIME_TYPE[request.data.get("new_crime_type")]
             )
             
             viewmodel = UpdateCriminalRecordViewModel(updated_criminal_record)

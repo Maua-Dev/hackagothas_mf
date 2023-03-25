@@ -23,7 +23,7 @@ class Test_GetCriminalRecordPresenter:
                     'common_attack_region':'Santo Andre'
                 },
                 'crime_type':'ROBBERY',
-                'arrested':True
+                'arrested': True
             },
             'message':'CriminalRecord was retrieved'
         }
