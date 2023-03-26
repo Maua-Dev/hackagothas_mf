@@ -28,7 +28,7 @@ class Test_CriminalRecordsRepositoryMock():
         assert repo_response == None 
 
     def test_create_criminal_records(self):
-        repo = CriminalRecordsRepositoryMock
+        repo = CriminalRecordsRepositoryMock()
         lenght_bef = len(repo.criminal_records)
         repo.create_criminal_records(CriminalRecords(
             criminal_records_id="4b276259-43d6-44f6-917b-e3091b88034X",
@@ -37,4 +37,4 @@ class Test_CriminalRecordsRepositoryMock():
             criminal=repo.criminal[3]) )
         lenght_aft = len(repo.criminal_records)
 
-        assert lenght_aft == lenght_bef+1
+        assert lenght_aft == lenght_bef + 1
