@@ -74,4 +74,6 @@ class CriminalRecordsRepositoryMock(ICriminalRecordsRepository):
         return None
         
     
-    
+    def create_criminal_records(self,criminal_record: CriminalRecords) -> CriminalRecords:
+        self.criminal_records.append(criminal_record)
+        return criminal_record

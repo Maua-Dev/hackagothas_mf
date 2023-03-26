@@ -8,4 +8,7 @@ class ICriminalRecordsRepository(ABC):
     def get_criminal_records(self, criminal_records_id: str) -> list:
         pass
     
+    @abstractmethod
+    def create_criminal_records(self, create_records: CriminalRecords) -> CriminalRecords:
+        pass
     
