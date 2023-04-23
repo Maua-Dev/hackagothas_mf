@@ -1,9 +1,9 @@
 import uuid
-from hackagothas_mf.src.shared.domain.entities.criminal import Criminal
-from hackagothas_mf.src.shared.domain.entities.criminal_records import CriminalRecords
-from hackagothas_mf.src.shared.domain.enums.criminal_type import CRIME_TYPE
-from hackagothas_mf.src.shared.domain.repositories.criminal_records_repository_interface import ICriminalRecordsRepository
-from hackagothas_mf.src.shared.helpers.errors.usecase_errors import ForbiddenAction
+from src.shared.domain.entities.criminal import Criminal
+from src.shared.domain.entities.criminal_records import CriminalRecords
+from src.shared.domain.enums.criminal_type import CRIME_TYPE
+from src.shared.domain.repositories.criminal_records_repository_interface import ICriminalRecordsRepository
+from src.shared.helpers.errors.usecase_errors import ForbiddenAction
 
 
 class CreateCriminalRecordsUseCase:

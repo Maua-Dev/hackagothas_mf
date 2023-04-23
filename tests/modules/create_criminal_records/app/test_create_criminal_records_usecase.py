@@ -1,11 +1,11 @@
 import pytest
-from hackagothas_mf.src.modules.create_criminal_records.app.create_criminal_records_usecase import CreateCriminalRecordsUseCase
-from hackagothas_mf.src.shared.domain.entities.criminal import Criminal
-from hackagothas_mf.src.shared.domain.entities.criminal_records import CriminalRecords
-from hackagothas_mf.src.shared.domain.enums.criminal_type import CRIME_TYPE
-from hackagothas_mf.src.shared.domain.repositories.criminal_records_repository_interface import ICriminalRecordsRepository
-from hackagothas_mf.src.shared.helpers.errors.usecase_errors import ForbiddenAction
-from hackagothas_mf.src.shared.infra.repositories.criminal_records_repository_mock import CriminalRecordsRepositoryMock
+from src.modules.create_criminal_records.app.create_criminal_records_usecase import CreateCriminalRecordsUseCase
+from src.shared.domain.entities.criminal import Criminal
+from src.shared.domain.entities.criminal_records import CriminalRecords
+from src.shared.domain.enums.criminal_type import CRIME_TYPE
+from src.shared.domain.repositories.criminal_records_repository_interface import ICriminalRecordsRepository
+from src.shared.helpers.errors.usecase_errors import ForbiddenAction
+from src.shared.infra.repositories.criminal_records_repository_mock import CriminalRecordsRepositoryMock
 
 
 class Test_CreateCriminalRecordsUseCase:

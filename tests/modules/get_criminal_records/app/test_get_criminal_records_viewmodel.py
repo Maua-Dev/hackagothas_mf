@@ -2,7 +2,7 @@ from src.modules.get_crimal_records.app.get_criminal_records_viewmodel import Ge
 from src.shared.domain.enums.criminal_type import CRIME_TYPE
 from src.shared.domain.enums.gender import GENDER
 from src.shared.infra.repositories.criminal_records_repository_mock import CriminalRecordsRepositoryMock
-import pyperclip
+
 
 class Test_GetCriminalRecordsViewmodel:
     def test_get_criminal_records_viewmodel(self):
